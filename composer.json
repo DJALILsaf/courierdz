@@ -1,0 +1,78 @@
+{
+    "name": "piteurstudio/courierdz",
+    "description": "CourierDZ is a PHP client for integrating multiple Algerian shipping providers, including ZR Express, Procolis, Yalidine, Ecotrack, Mayesto Delivery, and more, offering seamless order and tracking management.",
+    "keywords": [
+        "PiteurStudio",
+        "courierdz",
+        "Algeria",
+        "shipping",
+        "tracking",
+        "API",
+        "Yalidine",
+        "ZR Express",
+        "Procolis",
+        "Ecotrack",
+        "Mayesto Delivery"
+    ],
+    "homepage": "https://github.com/PiteurStudio/CourierDZ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nassim",
+            "email": "mb.nassim@piteur-studio.dz",
+            "role": "Developer"
+        },
+        {
+            "name": "Piteur Studio",
+            "email": "info@piteur-studio.dz",
+            "role": "Company"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/validation": "^9 | ^10 | ^11 | ^12"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.20.0",
+        "mockery/mockery": "^1.6",
+        "pestphp/pest": "^2.20 || ^3.0",
+        "php-coveralls/php-coveralls": "^2.7.0",
+        "phpstan/phpstan": "^2.0",
+        "rector/rector": "^2.0",
+        "spatie/ray": "^1.28"
+    },
+    "autoload": {
+        "psr-4": {
+            "CourierDZ\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CourierDZ\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "lint": "pint",
+        "refactor": "rector",
+        "test:unit": "pest --coverage --min=21",
+        "test:lint": "pint --test",
+        "test:refactor": "rector --dry-run",
+        "test:types": "phpstan",
+        "test": [
+            "@test:unit",
+            "@test:lint",
+            "@test:types",
+            "@test:refactor"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
